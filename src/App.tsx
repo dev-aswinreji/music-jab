@@ -27,9 +27,10 @@ function App() {
           <h1>{songData.name}</h1>
           <p>{songData.artists[0].name}</p>
           <img src={songData.album.images[0].url} alt="Album Cover" />
-          <source src={songData.preview_url} type="audio/ogg"/>
+          <source src={songData.uri} type="audio/ogg"/>
           <p>It is loaded</p>
-          <source src={songData.preview_url} type="audio/mp3"/>
+          <source src={songData.external_urls.spotify} type="audio/mp3"/>
+          <a href={songData.external_urls.spotify}>{songData.external_urls.spotify}</a>
         </div>
       ):(
         <p>...Loading</p>
