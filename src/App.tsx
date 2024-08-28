@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      "https://api.spotify.com/v1/search?q=smell%20like%20a%20teen%20spirit&type=track&limit=1",{
+      "https://api.spotify.com/v1/search?q=trending%20india&type=track&limit=1",{
         headers:{
           Authorization : `Bearer ${accessToken}`
         }
@@ -30,7 +30,7 @@ function App() {
           <source src={songData.uri} type="audio/ogg"/>
           <p>It is loaded</p>
           <source src={songData.external_urls.spotify} type="audio/mp3"/>
-          <a href={songData.external_urls.spotify}>{songData.external_urls.spotify}</a>
+          <a href={songData.external_urls.spotify} target="_blank">{songData.external_urls.spotify}</a>
         </div>
       ):(
         <p>...Loading</p>
